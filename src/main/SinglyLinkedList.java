@@ -32,15 +32,51 @@ public class SinglyLinkedList {
     public static void main(String[] args) {
         SinglyLinkedList linkedList = new SinglyLinkedList();
         System.out.println(linkedList);
+        linkedList.insertHead(42);
+        System.out.println(linkedList);
+        for (int i = 0; i < 10; i++) {
+
+        }
     }
+
     @Override
     public String toString () {
         StringBuilder response = new StringBuilder();
         response.append("[");
+        Node temp =this.head;
+        while(temp!=null)
+        {
+            response.append(temp.getData());
+            if(temp.next!=null)
+            {
+                response.append(" => ");
+            }
+            temp=temp.next;
+
+        }
+
+
+
         response.append("]");
         return response.toString();
     }
-    }
+        private void insertHead(int data)
+        {
+           Node newNode = new Node(data,this.head);
+            this.head=newNode;
+           size++;
+
+         }
+
+         private void insertAfter(int data, Node node)
+         {
+            Node newNode =new Node(data, node.next);
+            node.next=newNode;
+            
+            size++;
+
+         }
+}
 
 
 
