@@ -26,4 +26,9 @@ public class SinglyLinkedList {
             this.next = next;
         }
     }
+ private Node head=null;
+    private int size=0;
+
+
+
 }
